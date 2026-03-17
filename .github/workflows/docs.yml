@@ -1,0 +1,43 @@
+# This file is synced from TWH5Viewer-dev and placed in the PUBLIC repo as
+# .github/workflows/docs.yml — do not edit it directly in the public repo.
+#
+# It runs inside the PUBLIC TWH5Viewer repo and deploys the docs to GitHub Pages
+# whenever the sync workflow pushes a new commit.
+
+name: Deploy Docs to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure Git credentials
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Cache MkDocs Material
+        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: mkdocs-material-
+
+      - name: Install dependencies
+        run: pip install -r docs/requirements.txt
+
+      - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force

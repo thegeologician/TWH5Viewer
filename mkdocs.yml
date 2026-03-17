@@ -1,0 +1,40 @@
+site_name: TWH5Viewer Documentation
+site_description: Documentation for TWH5Viewer, a PySide6-based HDF5 Viewer for icpTOF data.
+site_url: https://thegeologician.github.io/TWH5Viewer
+repo_url: https://github.com/thegeologician/TWH5Viewer
+repo_name: thegeologician/TWH5Viewer
+use_directory_urls: false
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: lime
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  - attr_list   # required for { .md-button } button syntax
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - Usage: usage.md
+  - Roadmap: ROADMAP.md
