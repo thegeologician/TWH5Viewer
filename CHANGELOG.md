@@ -7,7 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.5.3] - 2026-03-17
 
-- **new publication strategy**: Renamed main repo, made new public TWH5Viewer repo, which will only contain general info files and the release files. 
+### Changed
+- **Distribution — Public repo**: The main repository has been renamed to `TWH5Viewer-dev` (private). A new public `TWH5Viewer` repository now serves as the distribution point: it hosts the documentation site (`thegeologician.github.io/TWH5Viewer`) and the Windows executable as a GitHub Release asset. A CI sync workflow in the private repo automatically pushes user-facing files (README, CHANGELOG, docs, roadmap) to the public repo on every relevant commit.
+- **Docs — MkDocs button rendering**: Download button on the documentation home page now renders correctly with icon and styling. Added `attr_list`, `md_in_html`, and `pymdownx.emoji` markdown extensions to `mkdocs.yml` (previously missing, causing `{ .md-button }` and `:material-download:` to appear as literal text).
+
+### Fixed
+- **icpTOFpy CI — wheel not included in deployed Pages site**: The `update_docs.py` build script was copying the wheel into `site_dir` before `mkdocs build`, which cleans the output directory first and discards the wheel. Fixed by reversing the order (build docs first, copy wheel after) and switching the deploy step from `mkdocs gh-deploy` (which rebuilds from scratch) to `ghp-import` (which pushes the already-built `site_dir` as-is). The wheel is now reliably served at `thegeologician.github.io/icpTOFpy/dist/icptofpy-latest-py3-none-any.whl` after each CI run.
 
 ## [0.5.2] - 2026-03-13
 

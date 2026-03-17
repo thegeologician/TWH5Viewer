@@ -7,7 +7,7 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 
 ---
 
-## v0.5.x (Current version — 0.5.2)
+## v0.5.x (Current version — 0.5.3)
 *Focus: Visualization enhancements, channel filtering, layout flexibility, export completion, and core application stability.*
 
 ### Graphing Tool
@@ -31,9 +31,9 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 - [x] **Implement is_Quantistar()**: New metadata function and integration into the metadata loading system.
 
 ### File info
-- [ ] **Copy values**: Add "Copy value" and "Copy path" options to context menu. Copy whole branch/group when called on a group header.
-- [ ] **File path**: Add "Copy file path" option to context menu. Either make file path available in the metadata tree or add it to the file info dialog or show the file name and the "copy path" option globally.
-- [ ] **Export metadata**: Add "Export metadata" option to context menu. Export selected group or currently expanded groups or the whole metadata to a CSV file, JSON file, or a nicely formatted table as html, pdf, or png.
+- [x] **Copy values**: Add "Copy value" and "Copy path" options to context menu. Copy whole branch/group when called on a group header. *(v0.5.2)*
+- [x] **File path**: Add "Copy file path" option to context menu. Either make file path available in the metadata tree or add it to the file info dialog or show the file name and the "copy path" option globally. *(v0.5.2)*
+- [x] **Export metadata**: Add "Export metadata" option to context menu. Export selected group or currently expanded groups or the whole metadata to a CSV file, JSON file, or a nicely formatted table as html, pdf, or png. *(v0.5.2)*
 
 ---
 
@@ -47,7 +47,6 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 - [ ] **Better "About" dialog**: Add a "About" dialog that shows the version number, the author, and the license. Include a link to the website.
 - [ ] **App icon and splash screen**: Add an app icon and a splash screen (Nuitka or in python?). Add TW logo to the About screen.
 - [ ] **Dark mode**: Add dark mode / light mode support.
-
 
 ### Graphing Tool
 - [ ] **Derived parameters**: Formula-based derived channels freely exchangeable and usable in both Graphing and Imaging Tools.
@@ -76,6 +75,11 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 ### icpTOFpy
 - [ ] **Extract upstream data logic**: Migrate pixel filtering, column extraction, and ratio computation from `TWH5Viewer` into `icpTOFpy`.
 - [ ] **Instrument lookup**: Implement a function to translate ADQ serial number to instrument serial number.
+- [ ] **Further instrument models**: Add support for more instrument models (Vocus line, ecTOF?) - include into metadata system.
+- [ ] **DAQ hardware**: Add support for DAQ hardware (ADQ1600, ADQ14, ...) - include into metadata system.
+
+### File Tool
+- [ ] **Better overview**: Show status of the various "is_...()" functions more graphically, only show instruments that apply to the current file.
 
 ---
 
@@ -94,7 +98,6 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 - [ ] **Status indicators**: "Unsaved changes" / "read-only" indicators in status bar.
 
 ### Metadata & Info
-- [ ] **Context Menu on tree items**: "Copy Value" and "Copy Path" right-click menu.
 - [ ] **Search/Filter**: Search box for Metadata and HDF5 Structure trees.
 - [ ] **User Preferences**: Save/restore "Expanded Groups" tree state between sessions.
 - [ ] **FIB data**: Handle fibTOF data properly.
@@ -147,4 +150,8 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 - [x] **Export numerical formats**: Export map arrays or channel lists to CSV/JSON.
 - [x] **mipTOF metadata**: Adapted metadata loading system for mipTOF parameter placement.
 - [x] **Display full Configuration File Content**: Made text box viewable under Metadata tab.
+
+### File Info
+- [x] **Context-menu copy actions**: Right-click any tree item to copy its value, parameter name, or file path; right-click a group header to copy all parameter/value pairs as tab-separated text. *(v0.5.2)*
+- [x] **Metadata export**: Export a single group or all metadata to CSV, JSON, HTML, PDF, or PNG. All formats include the filename as a title and group section headings. *(v0.5.2)*
 </details>
