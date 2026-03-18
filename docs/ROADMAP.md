@@ -7,14 +7,14 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 
 ---
 
-## v0.5.x (Current version — 0.5.3)
+## v0.5.x (Current version — 0.5.4)
 *Focus: Visualization enhancements, channel filtering, layout flexibility, export completion, and core application stability.*
 
 ### Graphing Tool
 - [x] **Histogram plot binning options**: Options to either keep current, use same bin width for all channels, or calculate bin edges from min/max of all channels.
 - [x] **Histogram plot split**: Option to split into individual histograms for each channel, or plot them all in one plot.
 - [x] **Lin/Log toggles**: Make Lin/Log toggles available for all scatter- and histogram-plots in the Coplot all at once.
-- [ ] **Logarithmic & specific color scaling**: Logarithmic and other (ECDF, etc.) color-scaling options for heatmaps.
+- [x] **Logarithmic & specific color scaling**: Logarithmic and other (ECDF, etc.) color-scaling options for heatmaps. *(v0.5.5)*
 - [ ] **Improved channel selectors — imaging tool**: Port `ChannelSelectorWidget` to the imaging tool's single-select channel dropdown (search box + group pre-filters, single-select mode). Graphing tool integration is complete through Phase 4 — see [Implementation Plan](implementation_plan_channel_selector.md).
 
 
@@ -27,7 +27,7 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 - [ ] **Image export completeness**: Ensure `image_export.py` supports every option exposed in the Export dialog.
 
 ### icpTOFpy
-- [ ] **Better TPS2 parameter names**: Translate names of TPS2 parameters to be more user-friendly. Requires lookup table.
+- [x] **Better TPS2 parameter names**: Translate names of TPS2 parameters to be more user-friendly. Requires lookup table.
 - [x] **Implement is_Quantistar()**: New metadata function and integration into the metadata loading system.
 
 ### File info
@@ -57,6 +57,7 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 - [ ] **Derived time traces**: Calculated time traces from existing parameters.
 - [ ] **Automatic labels**: String metadata (scan/sample names) plotted along the time axis.
 - [ ] **Performance improvements**: Implement decimation for the heatmap, similar to the approach for the time traces outlined in [Performance Optimizations](plot_performance_optimizations.md). Is something similar possible for the other plots, is it sensible? For scatter plot or histogram plot, maybe sub-sample to manageable amount of randomly sampled data points.
+- [ ] **Bulk-selection of channels**: Allow for bulk-selection of channels in the channel selector (select one, Shift-select the last, allow to toggle all in between). 
 
 ### Imaging Tool
 - [ ] **Contrast histogram**: Display pixel values as an interactive histogram with draggable vmin/vmax handles.

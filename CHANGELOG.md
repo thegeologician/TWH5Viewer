@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- **Auto-incremented 4th version component**: `__version__` in `main.py` now appends the total git commit count at runtime (e.g. `0.5.3.47`). The base 3-part version (`0.5.3`) is only bumped manually for real releases. The 4th component is computed by calling `git rev-list --count HEAD` at startup; if git is unavailable the base version is used as-is. The full version is shown in the window title and About dialog.
+- **`widgets/flow_layout.py`**: New `FlowLayout(QLayout)` that arranges child widgets left-to-right, wrapping to the next line when the available width is exceeded.
+- **Fixed publishing workflow**: The new versioning broke the automatic publishing of the documentation and the executable. This has been fixed.
+
+### Fixed
+- **Channel selector — source buttons overflow**: Source toggle buttons were all placed on a single `QHBoxLayout`, making the popup extremely wide when many data sources are present. Now uses `FlowLayout` so buttons wrap automatically onto additional rows.
+- **Time trace y-axis label**: `_format_axis_label` was returning channel names plus unit (e.g. `Lens 2, Deflector (V)`). Now returns only the unit string (e.g. `V`); channel names belong in the legend, not on the axis.
+- **Legend overflow with many channels**: New `_place_legend()` helper in `GraphingTool`. For ≤ 8 entries the legend stays inside the axes (unchanged). For > 8 entries it is anchored just above the axes via `bbox_to_anchor`, and the existing `tight_layout` pass keeps the plot area intact.
+
 ## [0.5.3] - 2026-03-17
 
 ### Changed
