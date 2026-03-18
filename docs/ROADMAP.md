@@ -7,7 +7,7 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 
 ---
 
-## v0.5.x (Current version — 0.5.4)
+## v0.5.x (Current version — 0.5.5)
 *Focus: Visualization enhancements, channel filtering, layout flexibility, export completion, and core application stability.*
 
 ### Graphing Tool
@@ -15,7 +15,7 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 - [x] **Histogram plot split**: Option to split into individual histograms for each channel, or plot them all in one plot.
 - [x] **Lin/Log toggles**: Make Lin/Log toggles available for all scatter- and histogram-plots in the Coplot all at once.
 - [x] **Logarithmic & specific color scaling**: Logarithmic and other (ECDF, etc.) color-scaling options for heatmaps. *(v0.5.5)*
-- [ ] **Improved channel selectors — imaging tool**: Port `ChannelSelectorWidget` to the imaging tool's single-select channel dropdown (search box + group pre-filters, single-select mode). Graphing tool integration is complete through Phase 4 — see [Implementation Plan](implementation_plan_channel_selector.md).
+- [x] **Improved channel selectors — imaging tool**: Port `ChannelSelectorWidget` to the imaging tool's single-select channel dropdown (search box + group pre-filters, single-select mode). *(v0.5.5)*
 
 
 ### Imaging Tool

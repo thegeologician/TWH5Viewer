@@ -5,17 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.5.5] - 2026-03-18
 
 ### Added
-- **Auto-incremented 4th version component**: `__version__` in `main.py` now appends the total git commit count at runtime (e.g. `0.5.3.47`). The base 3-part version (`0.5.3`) is only bumped manually for real releases. The 4th component is computed by calling `git rev-list --count HEAD` at startup; if git is unavailable the base version is used as-is. The full version is shown in the window title and About dialog.
+- **Auto-incremented 4th version component**: `__version__` in `main.py` now appends the total git commit count at runtime (e.g. `0.5.5.52`). The base 3-part version is stored in `_BASE_VERSION` and only bumped manually for real releases. The 4th component is computed by calling `git rev-list --count HEAD` at startup; if git is unavailable the base version is used as-is. The full version is shown in the window title and About dialog.
 - **`widgets/flow_layout.py`**: New `FlowLayout(QLayout)` that arranges child widgets left-to-right, wrapping to the next line when the available width is exceeded.
-- **Fixed publishing workflow**: The new versioning broke the automatic publishing of the documentation and the executable. This has been fixed.
+- **Heatmap — colour-scale options**: Four colour-scale modes are now available in the Heatmap plot options (⚙): **Linear** (default), **Logarithmic** (`LogNorm`; highlights low-level structure), **Symmetric log** (`SymLogNorm`; handles data spanning zero), and **ECDF (rank)** (maps each row's values to percentile ranks [0–1] so outliers never dominate and within-row variation is maximised). The selected mode is appended to the colorbar label for clarity.
+- **Imaging Tool — searchable channel selector**: The plain `QComboBox` peak selector has been replaced with `ChannelSelectorWidget` in single-select mode. The new selector provides a live search box and toggle buttons ([Peaks], [Meta], [Major], geochemical group rows, data-source rows) that filter the channel list in-popup without affecting any selection. Clicking a channel closes the popup and triggers the image render. Tags (`peak`, `major`, `group:*`, `meta`) are computed from `icpTOFpy` metadata at load time and cached per entry. The previous selection is restored after a file re-load.
 
 ### Fixed
 - **Channel selector — source buttons overflow**: Source toggle buttons were all placed on a single `QHBoxLayout`, making the popup extremely wide when many data sources are present. Now uses `FlowLayout` so buttons wrap automatically onto additional rows.
 - **Time trace y-axis label**: `_format_axis_label` was returning channel names plus unit (e.g. `Lens 2, Deflector (V)`). Now returns only the unit string (e.g. `V`); channel names belong in the legend, not on the axis.
 - **Legend overflow with many channels**: New `_place_legend()` helper in `GraphingTool`. For ≤ 8 entries the legend stays inside the axes (unchanged). For > 8 entries it is anchored just above the axes via `bbox_to_anchor`, and the existing `tight_layout` pass keeps the plot area intact.
+- **Docs sync workflow — version grep**: The `docs.yml` CI workflow was failing to extract the version number after the `_BASE_VERSION` refactor. The `grep` pattern is now anchored to `_BASE_VERSION = "` instead of `__version__ = "`, restoring automatic doc and release publishing.
 
 ## [0.5.3] - 2026-03-17
 
