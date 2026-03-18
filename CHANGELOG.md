@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.6] - 2026-03-18
+
+### Added
+- **Imaging Tool — metadata channel rendering**: Metadata channels (from `cached_metadata`) are now available in the Imaging Tool channel selector and can be rendered as spatial maps. At render time each spot row in `cached_image_data` is matched to its metadata row via `meta_idx = WriteIndex × nbr_bufs + BufIndex`. The join works for LA files (uniform `nbr_bufs`) and non-LA liquid files (variable buf/write resolution). The cursor hover tooltip also resolves metadata values via the same join.
+- **Imaging Tool — correct Y-axis orientation**: The imaging plot Y-axis is now inverted so that the first scan line (lowest stage Y coordinate) appears at the top of the image, matching the physical stage direction. `ax.invert_yaxis()` is called once inside the full-rebuild path after `autoscale_view()`. Saved zoom limits and `_initial_extent` capture the inverted state, so double-click reset and channel switches all maintain the correct orientation.
+
+### Fixed
+- **Imaging Tool — zoom rectangle un-inverts Y axis**: Dragging a zoom rectangle previously called `sorted([y0, y1])` which always produced an ascending Y range, undoing the axis inversion. Fixed in `MplWidget.on_release`: the current axis direction is checked (`get_ylim()[0] > get_ylim()[1]`) and `yref` is produced as `[max, min]` for an inverted axis and `[min, max]` for a normal one. The log-scale guard uses `min(yref) <= 0` so it is direction-independent.
+- **Imaging Tool — metadata channels removed from dropdown**: A previous change incorrectly excluded `cached_metadata` columns from `populate_peak_dropdown`. Reverted: metadata channels are now included, grouped by colon-prefix (e.g. `"Gas Flow: Ar"` → section `"── Gas Flow ──"`), and tagged `{'meta'}` so the [Meta] filter button in the popup reveals them.
+
 ## [0.5.5] - 2026-03-18
 
 ### Added

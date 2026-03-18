@@ -7,7 +7,7 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 
 ---
 
-## v0.5.x (Current version — 0.5.5)
+## v0.5.x (Current version — 0.5.6)
 *Focus: Visualization enhancements, channel filtering, layout flexibility, export completion, and core application stability.*
 
 ### Graphing Tool
@@ -17,8 +17,9 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 - [x] **Logarithmic & specific color scaling**: Logarithmic and other (ECDF, etc.) color-scaling options for heatmaps. *(v0.5.5)*
 - [x] **Improved channel selectors — imaging tool**: Port `ChannelSelectorWidget` to the imaging tool's single-select channel dropdown (search box + group pre-filters, single-select mode). *(v0.5.5)*
 
-
 ### Imaging Tool
+- [x] **Metadata channels as spatial maps**: Metadata channels (e.g. gas flow, pressure, temperature logged per buf/write) can now be selected in the imaging tool channel picker and rendered as spatial colour maps. Values are joined to spot rows via `WriteIndex × nbr_bufs + BufIndex`. *(v0.5.6)*
+- [x] **Correct Y-axis orientation**: Image Y-axis is now inverted so the first scan line appears at the top. *(v0.5.6)*
 - [ ] **Interpolated output extent**: Clip numerical output and interpolated image export to the extent of the actual spot locations + 1/2 spot size.
 - [ ] **Interpolated image export**: Export an interpolated image where pixel values are interpolated between raw data points. Include interpolation method (bilinear, bicubic) and resolution options.
 
