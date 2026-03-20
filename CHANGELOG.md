@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- **Heatmap — colorbar tick labels clipped**: `tight_layout()` was called before the colorbar axes was appended via `make_axes_locatable`, so the right figure margin was too narrow for the colorbar tick labels. A second `tight_layout()` call after the colorbar setup corrects the margin.
+- **Data Plot — deselecting all channels does not clear the plot**: Clicking "None" or toggling off all group filters in the channel selector emitted the `selection_changed` signal but the plot only refreshed if Auto-Update was checked. The handler now also triggers a refresh when the resulting selection is empty, so the "Select channels to plot" placeholder always appears immediately.
+- **File Tool — PDF export fails in standalone executable**: `fig.savefig(path)` resolves `matplotlib.backends.backend_pdf` dynamically at save time; Nuitka's static analyser never traced this import and excluded the module. `backend_pdf` (and `backend_svg` for parity with Graphing Tool SVG export) are now explicitly included via `--include-module` in `build/build_exe.ps1`.
 
 ## [0.5.6] - 2026-03-18
 
