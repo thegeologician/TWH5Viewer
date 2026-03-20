@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **About dialog**: Rich dialog with TOFWERK logo, app version, description, and quick-links to the documentation site and GitHub repository.
+- **Help / Documentation menu item**: "Documentation" entry added to the About menu (above the About item) with F1 keyboard shortcut — opens the online docs in the system browser.
+- **Keyboard shortcuts**: Ctrl+O (Open file), Ctrl+W (Close file), F1 (Documentation).
+- **Splash screen (onefile executable)**: TOFWERK logo displayed during the onefile unpacking phase via Nuitka's `--onefile-windows-splash-screen-image`.
+
 ## [0.5.7] - 2026-03-20
 
 ### Added
