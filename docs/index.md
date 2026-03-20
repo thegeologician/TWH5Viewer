@@ -1,4 +1,4 @@
-# TWH5Viewer v0.5.6
+# TWH5Viewer v0.5.7
 
 A PySide6-based (Qt for Python) HDF5 viewer application specialised for TOFWERK icpTOF data files.
 

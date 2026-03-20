@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.7] - 2026-03-20
+
+### Added
+- **Image export — contact sheet completeness**: The batch contact sheet export now embeds metadata (filename, software version) when "Embed metadata" is checked, passes the `use_layers` flag for SVG/PDF semantic-layer exports, and always labels each sub-plot with its channel name.
+
 ### Fixed
 - **Heatmap — colorbar tick labels clipped**: `tight_layout()` was called before the colorbar axes was appended via `make_axes_locatable`, so the right figure margin was too narrow for the colorbar tick labels. A second `tight_layout()` call after the colorbar setup corrects the margin.
 - **Data Plot — deselecting all channels does not clear the plot**: Clicking "None" or toggling off all group filters in the channel selector emitted the `selection_changed` signal but the plot only refreshed if Auto-Update was checked. The handler now also triggers a refresh when the resulting selection is empty, so the "Select channels to plot" placeholder always appears immediately.

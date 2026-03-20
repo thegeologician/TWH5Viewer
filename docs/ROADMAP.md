@@ -7,7 +7,7 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 
 ---
 
-## v0.5.x (Current version — 0.5.6)
+## v0.5.x (Current version — 0.5.7)
 *Focus: Visualization enhancements, channel filtering, layout flexibility, export completion, and core application stability.*
 
 ### Graphing Tool
@@ -22,7 +22,7 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 - [x] **Correct Y-axis orientation**: Image Y-axis is now inverted so the first scan line appears at the top. *(v0.5.6)*
 
 ### App Structure & Export
-- [ ] **Image export completeness**: Ensure `image_export.py` supports every option exposed in the Export dialog.
+- [x] **Image export completeness**: Ensure `image_export.py` supports every option exposed in the Export dialog.
 
 ### icpTOFpy
 - [x] **Better TPS2 parameter names**: Translate names of TPS2 parameters to be more user-friendly. Requires lookup table.
