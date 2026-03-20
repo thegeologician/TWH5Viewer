@@ -3,7 +3,7 @@
 This document tracks planned features and enhancements for TWH5Viewer.
 Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 
-> Priority ordering is determined by a combination of **user impact** and **implementation effort**. 
+> Priority ordering is determined by a combination of **user impact** and **implementation effort**.
 
 ---
 
@@ -20,11 +20,8 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 ### Imaging Tool
 - [x] **Metadata channels as spatial maps**: Metadata channels (e.g. gas flow, pressure, temperature logged per buf/write) can now be selected in the imaging tool channel picker and rendered as spatial colour maps. Values are joined to spot rows via `WriteIndex × nbr_bufs + BufIndex`. *(v0.5.6)*
 - [x] **Correct Y-axis orientation**: Image Y-axis is now inverted so the first scan line appears at the top. *(v0.5.6)*
-- [ ] **Interpolated output extent**: Clip numerical output and interpolated image export to the extent of the actual spot locations + 1/2 spot size.
-- [ ] **Interpolated image export**: Export an interpolated image where pixel values are interpolated between raw data points. Include interpolation method (bilinear, bicubic) and resolution options.
 
 ### App Structure & Export
-- [ ] **Standalone image export CLI**: Finalize and document the `image_export.py` `__main__` CLI block so it works end-to-end as a standalone command-line tool.
 - [ ] **Image export completeness**: Ensure `image_export.py` supports every option exposed in the Export dialog.
 
 ### icpTOFpy
@@ -38,8 +35,8 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 
 ---
 
-## v0.6.0 (Analysis Workflows)
-*Focus: ROIs, derived channels, statistics, and cross-tool parameter exchange.*
+## v0.6.0 (UX and Documentation)
+*Focus: Improve UX, documentation, and export completeness.*
 
 ### Documentation and UX
 - [ ] **Online Docs**: Expand Usage information with more explanations of all the different options and screenshots.
@@ -47,70 +44,98 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 - [ ] **Help option**: Add a help option to the menu bar that opens the online docs.
 - [ ] **Better "About" dialog**: Add a "About" dialog that shows the version number, the author, and the license. Include a link to the website.
 - [ ] **App icon and splash screen**: Add an app icon and a splash screen (Nuitka or in python?). Add TW logo to the About screen.
-- [ ] **Dark mode**: Add dark mode / light mode support.
+- [ ] **App-wide theme**: System default / dark / light theme for the whole Qt application (menus, dialogs, and plot backgrounds), independent of the per-plot style set in Plot Options.
+- [ ] **Basic keyboard shortcuts**: Common actions (Ctrl+O open file, Ctrl+W close file, etc.).
+- [ ] **Search/Filter**: Search box for Metadata and HDF5 Structure trees.
+- [ ] **User Preferences**: Save/restore "Expanded Groups" tree state between sessions.
 
 ### Graphing Tool
-- [ ] **Derived parameters**: Formula-based derived channels freely exchangeable and usable in both Graphing and Imaging Tools.
-- [ ] **"Universal" derived channels**: Allow for complex, mathematical formula calculations between channels, progressing past hard-coded ratios.
-- [ ] **Statistics Data Plot**: New Data Plot type — "Statistics" to show currently selected channels as a labelled box plot.
-- [ ] **Time range quick stats**: When a time range is selected in time trace view, show quick stats for each channel (min, max, mean, std, median, count) in the info box.
-- [ ] **Regression lines**: Option to put a regression line, optionally with correlation coefficient and R-squared value, on scatter plots.
-- [ ] **Derived time traces**: Calculated time traces from existing parameters.
 - [ ] **Automatic labels**: String metadata (scan/sample names) plotted along the time axis.
+- [ ] **Time range quick stats**: When a time range is selected in time trace view, show quick stats (min, max, mean, std, median, count) for each selected channel in the info box.
 - [ ] **Performance improvements**: Implement decimation for the heatmap, similar to the approach for the time traces outlined in [Performance Optimizations](plot_performance_optimizations.md). Is something similar possible for the other plots, is it sensible? For scatter plot or histogram plot, maybe sub-sample to manageable amount of randomly sampled data points.
-- [ ] **Bulk-selection of channels**: Allow for bulk-selection of channels in the channel selector (select one, Shift-select the last, allow to toggle all in between). 
+- [ ] **Bulk-selection of channels**: Allow for bulk-selection of channels in the channel selector (select one, Shift-select the last, allow to toggle all in between).
 
 ### Imaging Tool
+- [ ] **Interpolated output extent**: Clip numerical output and interpolated image export to the extent of the actual spot locations + 1/2 spot size.
+- [ ] **Interpolated image export**: Export an interpolated image where pixel values are interpolated between raw data points. Include interpolation method (bilinear, bicubic) and resolution options.
+- [ ] **Multi-channel images**: Export a selection of channels as a multi-channel image to TIFF, layers to SVG/PDF, or GIF.
+- [ ] **Export layers**: SVG/PDF/TIFF export with image and decorations in separate layers.
 - [ ] **Contrast histogram**: Display pixel values as an interactive histogram with draggable vmin/vmax handles.
 - [ ] **Colour scale for false-colour images**: Show RGB colour scale as three separate bars or a mixing-triangle.
 - [ ] **Editing RGB channels**: Buttons to rotate (RGB→GBR) or swap (RGB→RBG) channel assignment.
 - [ ] **Colorblind-safe colormaps**: viridis, cividis, batlow.
-- [ ] **Multi-channel images**: Export a selection of channels as a multi-channel image to TIFF, layers to SVG/PDF, or GIF.
-- [ ] **Export layers**: SVG/PDF/TIFF export with image and decorations in separate layers.
 
-### Analysis Features
-- [ ] **ROI Tool**: Draw Rectangle/Circle/Polygon ROIs; extract statistics and spectra. Multi-ROI comparison.
-- [ ] **Histogram ROI**: Pixel intensity histogram for the active peak (ROI "full map" option).
-- [ ] **Laser metadata**: Make scan names, sample types, and laser spot types available as time-resolved data and spatial data.
-- [ ] **ROI by scan/sample**: Auto-generate ROIs from laser metadata (one ROI per scan/sample).
+### App Structure & Export
+- [ ] **Standalone image export CLI**: Finalize the `image_export.py` `__main__` CLI block so it works end-to-end as a standalone command-line tool.
+- [ ] **Document stand-alone image export CLI**: Add documentation for the stand-alone image export CLI in Readme, and in the help menu on the website.
+- [ ] **Check if image export could be built into a stand-alone executable**: Check what additional data loading and processing logic would be required to make the image export functionality available as a stand-alone executable. Check library dependencies and executable build size.
 
 ### icpTOFpy
-- [ ] **Extract upstream data logic**: Migrate pixel filtering, column extraction, and ratio computation from `TWH5Viewer` into `icpTOFpy`.
+- [ ] **Performance improvements**: Implement performance improvements for `icpTOFpy`.
 - [ ] **Instrument lookup**: Implement a function to translate ADQ serial number to instrument serial number.
-- [ ] **Further instrument models**: Add support for more instrument models (Vocus line, ecTOF?) - include into metadata system.
-- [ ] **DAQ hardware**: Add support for DAQ hardware (ADQ1600, ADQ14, ...) - include into metadata system.
+- [ ] **DAQ hardware**: Add support for different DAQ hardware (ADQ1600, ADQ14, ...) — include into metadata system.
+- [ ] **Better error messages**: Improve error messages to be more user-friendly. Review all error messages and add more context and helpful information. Review default logging levels and messages.
 
 ### File Tool
 - [ ] **Better overview**: Show status of the various "is_...()" functions more graphically, only show instruments that apply to the current file.
 
 ---
 
+## v0.7.0 (Enhanced data querying and analysis)
+*Focus: derived channels, statistics, ROIs, and cross-tool parameter exchange.*
+
+### Graphing Tool
+- [ ] **Derived channels**: Formula-based derived channels (arithmetic expressions between any combination of channels) usable as time traces, scatter/histogram axes, and spatial maps. Replaces and extends current hard-coded ratio channels; definitions are freely exchangeable between Graphing and Imaging Tools.
+- [ ] **Statistics Data Plot**: New Data Plot type — "Statistics" to show currently selected channels as a labelled box plot.
+- [ ] **Regression lines**: Option to put a regression line, optionally with correlation coefficient and R-squared value, on scatter plots.
+
+### Analysis Features
+- [ ] **Laser metadata**: Make scan names, sample types, and laser spot types available as time-resolved data and spatial data. *(Prerequisite for ROI by scan/sample.)*
+- [ ] **ROI Tool**: Draw Rectangle/Circle/Polygon ROIs; extract statistics and spectra. Multi-ROI comparison.
+- [ ] **Histogram ROI**: Pixel intensity histogram for the active peak (ROI "full map" option).
+- [ ] **ROI by scan/sample**: Auto-generate ROIs from laser metadata (one ROI per scan/sample). *Requires Laser metadata.*
+
+---
+
 ## v1.0.0 (Architecture & QoL)
-*Focus: Overall optimizations, usability polish, plugin systems, and robust state management.*
+*Focus: Overall optimizations, usability polish, and robust state management.*
 
 ### App Structure
-- [ ] **Active Channel Filter**: Global "Active Channels" filter visible in all tools/exports (option to hide or not load them).
 - [ ] **Settings Dialog**: UI for application-wide defaults (colormap, spot shape, theme, etc.) and default presets for all the individual options dialogs.
-- [ ] **Save / Load Workspace**: Save open file, selections, ROIs, derived channels to a file and restore.
-- [ ] **Keyboard shortcuts**: Common actions (Ctrl+O, Ctrl+W, etc.).
-- [ ] **Undo/redo system**: Command pattern for all state-mutating operations.
-- [ ] **Plugin System**: Run custom Python scripts on loaded data.
-- [ ] **Save derived channel definitions**: Persist ratio/RGB/formula definitions to disk.
 - [ ] **Recent Files**: "Open Recent" menu item.
-- [ ] **Status indicators**: "Unsaved changes" / "read-only" indicators in status bar.
+- [ ] **Active Channel Filter**: Global "Active Channels" filter visible in all tools/exports (option to hide or not load them).
+- [ ] **Undo/redo system**: Command pattern for all state-mutating operations.
 
-### Metadata & Info
-- [ ] **Search/Filter**: Search box for Metadata and HDF5 Structure trees.
-- [ ] **User Preferences**: Save/restore "Expanded Groups" tree state between sessions.
-- [ ] **FIB data**: Handle fibTOF data properly.
+### icpTOFpy
+- [ ] **Extract upstream data logic**: Migrate pixel filtering, column extraction, and ratio computation from `TWH5Viewer` into `icpTOFpy`.
+
+---
+
+## v1.1.0 (Data analysis features)
+*Focus: Data analysis features and application enhancements.*
+
+### App Structure
+- [ ] **Save / Load Workspace**: Save open file, selections, ROIs, derived channels to a file and restore.
+- [ ] **Save derived channel definitions**: Persist ratio/RGB/formula definitions to disk.
+- [ ] **Status indicators**: "Unsaved changes" / "read-only" indicators in status bar.
+- [ ] **Plugin System**: Run custom Python scripts on loaded data.
 
 ### Advanced Capabilities (Long Term)
 - [ ] **Peak integration**: Show time trace for interactively defined integration window; calculate area.
 - [ ] **Multi-file overlay**: Compare spectra or time traces from multiple open files.
 - [ ] **Mass calibration viewer**: Visualize/edit calibration curves; plot peak position over time.
 - [ ] **Image annotations**: Text, arrows, shapes as toggleable overlays.
-- [ ] **2.5D and 3D visualization**: Slider to scroll through coordinates (2.5D) or 3D voxel plot.
 - [ ] **Overlay images**: Overlay multiple channels or false-colour images as a new composite view.
+- [ ] **Segmented Image data**: Handle Image data with an additional dimension, usually in Segments.
+- [ ] **FIB Images**: Handle fibTOF images properly.
+- [ ] **2.5D and 3D visualization**: Slider to scroll through coordinates (2.5D) or 3D voxel plot.
+
+---
+
+## Continuous Tasks
+*These items have no fixed target version and are worked on incrementally as opportunities arise.*
+
+- **More instruments and TPS parameters** *(icpTOFpy)*: Extend the range of recognised instruments (Vocus range, EI?, Quantistar variants) and add more instrument-specific TPS parameters. Standardise the way the masterlists are generated from `tps1rc.cfg` files.
 
 ---
 
