@@ -41,11 +41,11 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 ### Documentation and UX
 - [ ] **Online Docs**: Expand Usage information with more explanations of all the different options and screenshots.
 - [ ] **Better Tooltips**: Add tooltips to all the different options and parameters. Prepare a table of all items and tooltips for review.
-- [ ] **Help option**: Add a help option to the menu bar that opens the online docs.
-- [ ] **Better "About" dialog**: Add a "About" dialog that shows the version number, the author, and the license. Include a link to the website.
-- [ ] **App icon and splash screen**: Add an app icon and a splash screen (Nuitka or in python?). Add TW logo to the About screen.
-- [ ] **App-wide theme**: System default / dark / light theme for the whole Qt application (menus, dialogs, and plot backgrounds), independent of the per-plot style set in Plot Options.
-- [ ] **Basic keyboard shortcuts**: Common actions (Ctrl+O open file, Ctrl+W close file, etc.).
+- [x] **Help option**: "Documentation" entry in the About menu (F1 shortcut) opens the online docs in the system browser.
+- [x] **Better "About" dialog**: Rich About dialog with TOFWERK logo, version number, description, and quick-links to docs and GitHub.
+- [ ] **App icon**: Add a Windows `.ico` app icon (taskbar / title bar). *(Splash screen already done via Nuitka `--onefile-windows-splash-screen-image`.)*
+- [x] **App-wide theme**: System default / dark / light theme for the whole Qt application (menus, dialogs, and plot backgrounds), independent of the per-plot style set in Plot Options.
+- [x] **Basic keyboard shortcuts**: Ctrl+O (Open file), Ctrl+W (Close file), F1 (Documentation).
 - [x] **Search/Filter**: Search box for Metadata and HDF5 Structure trees.
 - [x] **User Preferences**: Save/restore "Expanded Groups" tree state between sessions.
 
