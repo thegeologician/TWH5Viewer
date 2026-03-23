@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Help / Documentation menu item**: "Documentation" entry added to the About menu (above the About item) with F1 keyboard shortcut — opens the online docs in the system browser.
 - **Keyboard shortcuts**: Ctrl+O (Open file), Ctrl+W (Close file), F1 (Documentation).
 - **Splash screen (onefile executable)**: TOFWERK logo displayed during the onefile unpacking phase via Nuitka's `--onefile-windows-splash-screen-image`.
+- **File Info — Metadata search**: Live search box above the metadata tree filters groups and parameters by name or value as you type. Groups are auto-expanded when they contain matches; clearing the search restores the previous expansion state.
+- **File Info — Persistent expansion state**: The set of expanded metadata groups is saved to user preferences (`QSettings`) whenever the user expands or collapses a group, and restored automatically on every file load. On first run the file-type-appropriate defaults apply as before.
+- **HDF5 Info — Structure search**: Live search box above the HDF5 structure tree recursively filters groups, datasets, and attributes by name or info text. Matching paths are auto-expanded; clearing the search collapses back to the root-only default.
 
 ## [0.5.7] - 2026-03-20
 

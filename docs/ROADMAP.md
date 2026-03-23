@@ -46,8 +46,8 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 - [ ] **App icon and splash screen**: Add an app icon and a splash screen (Nuitka or in python?). Add TW logo to the About screen.
 - [ ] **App-wide theme**: System default / dark / light theme for the whole Qt application (menus, dialogs, and plot backgrounds), independent of the per-plot style set in Plot Options.
 - [ ] **Basic keyboard shortcuts**: Common actions (Ctrl+O open file, Ctrl+W close file, etc.).
-- [ ] **Search/Filter**: Search box for Metadata and HDF5 Structure trees.
-- [ ] **User Preferences**: Save/restore "Expanded Groups" tree state between sessions.
+- [x] **Search/Filter**: Search box for Metadata and HDF5 Structure trees.
+- [x] **User Preferences**: Save/restore "Expanded Groups" tree state between sessions.
 
 ### Graphing Tool
 - [ ] **Automatic labels**: String metadata (scan/sample names) plotted along the time axis.
