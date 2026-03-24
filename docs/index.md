@@ -1,6 +1,6 @@
 # TWH5Viewer v0.5.7
 
-A PySide6-based (Qt for Python) HDF5 viewer application specialised for TOFWERK icpTOF data files.
+A PySide6-based (Qt for Python) HDF5 viewer application specialised on TOFWERK icpTOF data files, but usable with other (Tofwerk) instrument data files as well.
 
 ## Download
 
@@ -8,6 +8,8 @@ A PySide6-based (Qt for Python) HDF5 viewer application specialised for TOFWERK 
 
 The standalone executable requires no Python installation. Download and run directly on Windows.
 Releases and release notes are available on the [GitHub Releases page](https://github.com/thegeologician/TWH5Viewer/releases).
+
+Many of the functionalities demonstrated here can be achieved with the library functions provided by [icpTOFpy](https://thegeologician.github.io/icpTOFpy/). This application is intended as a convenient GUI for users who prefer a graphical interface over scripting.
 
 ## Features
 
@@ -35,20 +37,6 @@ Releases and release notes are available on the [GitHub Releases page](https://g
     - Right-click any item for context-sensitive actions: copy value, copy parameter name, copy file path, or copy an entire group's values (tab-separated).
     - Export a single group or all metadata to **CSV**, **JSON**, **HTML**, **PDF**, or **PNG** — all formats include the filename as a title and group headings.
 
-## Installation (from source)
-
-### Prerequisites
-
-- Python 3.9+
-- [icpTOFpy](https://github.com/thegeologician/icpTOFpy)
-
-### Install Dependencies
-
-```bash
-pip install https://thegeologician.github.io/icpTOFpy/dist/icptofpy-latest-py3-none-any.whl
-pip install -r requirements.txt
-python main.py
-```
 
 ## License
 

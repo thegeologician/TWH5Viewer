@@ -2,11 +2,7 @@
 
 ## Starting the Application
 
-To start the TWH5Viewer, navigate to the project directory and run:
-
-```bash
-python main.py
-```
+Run the Windows .exe file. You can also open a file by dragging and dropping it onto the application window or by using the File > Open with... menu.
 
 ## Interface Overview
 

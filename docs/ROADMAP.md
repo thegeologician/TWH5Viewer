@@ -43,7 +43,7 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 - [ ] **Better Tooltips**: Add tooltips to all the different options and parameters. Prepare a table of all items and tooltips for review.
 - [x] **Help option**: "Documentation" entry in the About menu (F1 shortcut) opens the online docs in the system browser.
 - [x] **Better "About" dialog**: Rich About dialog with TOFWERK logo, version number, description, and quick-links to docs and GitHub.
-- [ ] **App icon**: Add a Windows `.ico` app icon (taskbar / title bar). *(Splash screen already done via Nuitka `--onefile-windows-splash-screen-image`.)*
+- [x] **App icon**: ICO bundled and embedded in the exe via `--windows-icon-from-ico`; shown in File Explorer and title bar. *(Taskbar icon and splash screen do not work in Nuitka onefile mode due to bootstrapper/subprocess architecture — shelved.)*
 - [x] **App-wide theme**: System default / dark / light theme for the whole Qt application (menus, dialogs, and plot backgrounds), independent of the per-plot style set in Plot Options.
 - [x] **Basic keyboard shortcuts**: Ctrl+O (Open file), Ctrl+W (Close file), F1 (Documentation).
 - [x] **Search/Filter**: Search box for Metadata and HDF5 Structure trees.
@@ -63,7 +63,7 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 - [ ] **Contrast histogram**: Display pixel values as an interactive histogram with draggable vmin/vmax handles.
 - [ ] **Colour scale for false-colour images**: Show RGB colour scale as three separate bars or a mixing-triangle.
 - [ ] **Editing RGB channels**: Buttons to rotate (RGB→GBR) or swap (RGB→RBG) channel assignment.
-- [ ] **Colorblind-safe colormaps**: viridis, cividis, batlow.
+- [ ] **Colorblind-safe colormaps**: viridis, cividis, batlow, greyscale.
 
 ### App Structure & Export
 - [ ] **Standalone image export CLI**: Finalize the `image_export.py` `__main__` CLI block so it works end-to-end as a standalone command-line tool.
@@ -72,12 +72,12 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 
 ### icpTOFpy
 - [ ] **Performance improvements**: Implement performance improvements for `icpTOFpy`.
-- [ ] **Instrument lookup**: Implement a function to translate ADQ serial number to instrument serial number.
+- [ ] **Instrument lookup**: Implement a function to translate ADQ serial number to instrument serial number. Needs lookup table, that should NOT be included in general distribution. If lookup table is given, return instrument serial no, if not given/present, return nothing, gracefully.
 - [ ] **DAQ hardware**: Add support for different DAQ hardware (ADQ1600, ADQ14, ...) — include into metadata system.
 - [ ] **Better error messages**: Improve error messages to be more user-friendly. Review all error messages and add more context and helpful information. Review default logging levels and messages.
 
 ### File Tool
-- [ ] **Better overview**: Show status of the various "is_...()" functions more graphically, only show instruments that apply to the current file.
+- [ ] **Better overview**: Show status of the various "is_...()" functions more graphically, only show instruments that apply to the current file. Maybe include instrument logos for different instruments types, and a table of tick marks / crosses for the "is_..." functions. - Needs to also work in metadata exports (CSV, HTML, PDF, PNG).
 
 ---
 

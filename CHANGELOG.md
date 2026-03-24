@@ -7,11 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- **App logo and icon bundled into project**: Logo (`resources/logo.png`) and app icon (`resources/icon.ico`) are now part of the repository. The application icon is set at `QApplication` level before any window is shown, preferring the multi-resolution ICO over the PNG. `resources/` is searched across three candidate base directories (`Path(__file__).parent`, `Path(sys.executable).parent`, and `sys.path` entries) so source runs, standalone builds, and onefile builds all resolve the assets correctly. Windows App User Model ID (`TOFWERK.TWH5Viewer`) is registered before `QApplication` is created.
+
 ### Added
 - **About dialog**: Rich dialog with TOFWERK logo, app version, description, and quick-links to the documentation site and GitHub repository.
 - **Help / Documentation menu item**: "Documentation" entry added to the About menu (above the About item) with F1 keyboard shortcut — opens the online docs in the system browser.
 - **Keyboard shortcuts**: Ctrl+O (Open file), Ctrl+W (Close file), F1 (Documentation).
-- **Splash screen (onefile executable)**: TOFWERK logo displayed during the onefile unpacking phase via Nuitka's `--onefile-windows-splash-screen-image`.
+
+### Known limitations
+- **Splash screen (onefile)**: The build script converts `resources/logo.png` to a 24-bit BMP and passes it to Nuitka's `--onefile-windows-splash-screen-image`, but the splash does not appear. Root cause not yet determined; shelved for a future Nuitka version.
+- **Taskbar icon (onefile)**: In a Nuitka onefile build the bootstrapper and the Python interpreter run as separate processes. Windows tracks the taskbar button under the bootstrapper's PID; `app.setWindowIcon()` runs in the Python sub-process and has no effect on the taskbar button. The correct icon does appear in File Explorer (embedded via `--windows-icon-from-ico`) and in the application title bar.
 - **File Info — Metadata search**: Live search box above the metadata tree filters groups and parameters by name or value as you type. Groups are auto-expanded when they contain matches; clearing the search restores the previous expansion state.
 - **File Info — Persistent expansion state**: The set of expanded metadata groups is saved to user preferences (`QSettings`) whenever the user expands or collapses a group, and restored automatically on every file load. On first run the file-type-appropriate defaults apply as before.
 - **HDF5 Info — Structure search**: Live search box above the HDF5 structure tree recursively filters groups, datasets, and attributes by name or info text. Matching paths are auto-expanded; clearing the search collapses back to the root-only default.
