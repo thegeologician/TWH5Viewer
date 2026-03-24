@@ -7,7 +7,7 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 
 ---
 
-## v0.5.x (Current version — 0.5.7)
+## v0.5.x (Released — 0.5.7)
 *Focus: Visualization enhancements, channel filtering, layout flexibility, export completion, and core application stability.*
 
 ### Graphing Tool
@@ -35,11 +35,11 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 
 ---
 
-## v0.6.0 (UX and Documentation)
+## v0.6.0 (Current version — 0.6.0) (UX and Documentation)
 *Focus: Improve UX, documentation, and export completeness.*
 
 ### Documentation and UX
-- [ ] **Online Docs**: Expand Usage information with more explanations of all the different options and screenshots.
+- [x] **Online Docs**: Expand Usage information with more explanations of all the different options and screenshots.
 - [x] **Better Tooltips**: Descriptive tooltips added to all interactive controls (toolbar actions, channel selectors, plot-type combos, copy/export/reset buttons, search boxes, preferences theme selector).
 - [x] **Help option**: "Documentation" entry in the About menu (F1 shortcut) opens the online docs in the system browser.
 - [x] **Better "About" dialog**: Rich About dialog with TOFWERK logo, version number, description, and quick-links to docs and GitHub.
