@@ -40,7 +40,7 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 
 ### Documentation and UX
 - [ ] **Online Docs**: Expand Usage information with more explanations of all the different options and screenshots.
-- [ ] **Better Tooltips**: Add tooltips to all the different options and parameters. Prepare a table of all items and tooltips for review.
+- [x] **Better Tooltips**: Descriptive tooltips added to all interactive controls (toolbar actions, channel selectors, plot-type combos, copy/export/reset buttons, search boxes, preferences theme selector).
 - [x] **Help option**: "Documentation" entry in the About menu (F1 shortcut) opens the online docs in the system browser.
 - [x] **Better "About" dialog**: Rich About dialog with TOFWERK logo, version number, description, and quick-links to docs and GitHub.
 - [x] **App icon**: ICO bundled and embedded in the exe via `--windows-icon-from-ico`; shown in File Explorer and title bar. *(Taskbar icon and splash screen do not work in Nuitka onefile mode due to bootstrapper/subprocess architecture — shelved.)*
