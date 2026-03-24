@@ -52,7 +52,7 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 ### Graphing Tool
 - [ ] **Automatic labels**: String metadata (scan/sample names) plotted along the time axis.
 - [ ] **Time range quick stats**: When a time range is selected in time trace view, show quick stats (min, max, mean, std, median, count) for each selected channel in the info box.
-- [ ] **Performance improvements**: Implement decimation for the heatmap, similar to the approach for the time traces outlined in [Performance Optimizations](plot_performance_optimizations.md). Is something similar possible for the other plots, is it sensible? For scatter plot or histogram plot, maybe sub-sample to manageable amount of randomly sampled data points.
+- [ ] **Performance improvements**: Implement decimation for the heatmap, similar to the approach for the time traces outlined in `plot_performance_optimizations.md`. Is something similar possible for the other plots, is it sensible? For scatter plot or histogram plot, maybe sub-sample to manageable amount of randomly sampled data points.
 - [ ] **Bulk-selection of channels**: Allow for bulk-selection of channels in the channel selector (select one, Shift-select the last, allow to toggle all in between).
 
 ### Imaging Tool
