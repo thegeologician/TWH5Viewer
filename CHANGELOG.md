@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- **Online docs — screenshots missing**: Sync workflow (`docs.yml`) now copies `docs/screenshots/`
+  to the public repo and triggers on changes to that directory, so images render correctly
+  on the GitHub Pages site.
+- **Contact sheet — duplicate subplot titles**: Removed the redundant `ax.set_title()` call
+  above each subplot in `_generate_contact_sheet()`. The channel label is already drawn inside
+  the image by `render_image(clean=True)`; the overall filename remains in the figure super-title.
+- **Batch image export — channel selector**: Replaced the plain `QListWidget`-based
+  `ChannelSelectionDialog` with a dialog embedding `ChannelSelectorWidget` (multi-select,
+  live search, filter toggle buttons for peaks / metadata / major isotopes / element groups).
+  Population logic shared between the main peak dropdown and the batch export dialog via
+  the new `ImagingController._fill_channel_combo()` helper.
+
 ## [0.6.0] - 2026-03-24
 
 ### Added
