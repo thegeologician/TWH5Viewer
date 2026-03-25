@@ -1,0 +1,1505 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for TWH5Viewer, a PySide6-based HDF5 Viewer for icpTOF data.">
+      
+      
+      
+        <link rel="canonical" href="https://thegeologician.github.io/TWH5Viewer/usage.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="ROADMAP.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Usage - TWH5Viewer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#usage-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="TWH5Viewer Documentation" class="md-header__button md-logo" aria-label="TWH5Viewer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TWH5Viewer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Usage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thegeologician/TWH5Viewer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    thegeologician/TWH5Viewer
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="TWH5Viewer Documentation" class="md-nav__button md-logo" aria-label="TWH5Viewer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TWH5Viewer Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thegeologician/TWH5Viewer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    thegeologician/TWH5Viewer
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="usage.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting the Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tool-switching-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tool-switching buttons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyboard Shortcuts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferences
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Preferences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tooltips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tooltips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Info
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#searching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Searching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context Menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdf5-structure-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HDF5 Structure Browser
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HDF5 Structure Browser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#searching_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Searching
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphing-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graphing Tool
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphing Tool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sum-mass-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sum Mass Spectrum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-traces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Traces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Time Traces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Cursor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Plots
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imaging-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imaging Tool
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Imaging Tool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#channel-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Channel Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contrast-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contrast Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colour-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colour Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Derived Channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cursor-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cursor Info
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ROADMAP.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting the Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tool-switching-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tool-switching buttons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyboard Shortcuts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferences
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Preferences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tooltips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tooltips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Info
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#searching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Searching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context Menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdf5-structure-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HDF5 Structure Browser
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HDF5 Structure Browser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#searching_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Searching
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphing-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graphing Tool
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphing Tool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sum-mass-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sum Mass Spectrum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-traces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Traces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Time Traces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Cursor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Plots
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imaging-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imaging Tool
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Imaging Tool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#channel-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Channel Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contrast-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contrast Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colour-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colour Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Derived Channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cursor-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cursor Info
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="usage-guide">Usage Guide</h1>
+<h2 id="starting-the-application">Starting the Application</h2>
+<p>Run the Windows <code>.exe</code> file. If a data file is passed as a command-line argument the application opens it automatically on startup; you can also drop a <code>.h5</code> file onto the application window at any time.</p>
+<p>To open a file from within the application use <strong>File → Open…</strong> or the keyboard shortcut <strong>Ctrl+O</strong>.</p>
+<hr />
+<h2 id="interface-overview">Interface Overview</h2>
+<p>The application window consists of a <strong>menu bar</strong>, a <strong>main toolbar</strong>, and a <strong>central panel</strong>. The main toolbar contains four tool-switching buttons — <em>File Info</em>, <em>HDF5 Info</em>, <em>Graphing</em>, and <em>Imaging</em> — each of which replaces the central panel with the corresponding tool view and activates that tool's own context toolbar.</p>
+<p><img alt="TWH5Viewer main window with File Info tool active" src="screenshots/main-window.png" /></p>
+<h3 id="tool-switching-buttons">Tool-switching buttons</h3>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Keyboard</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>File Info</strong></td>
+<td>—</td>
+<td>Parsed metadata tree grouped by category</td>
+</tr>
+<tr>
+<td><strong>HDF5 Info</strong></td>
+<td>—</td>
+<td>Raw HDF5 file hierarchy (groups, datasets, attributes)</td>
+</tr>
+<tr>
+<td><strong>Graphing</strong></td>
+<td>—</td>
+<td>Mass spectrum, time traces, and data plots</td>
+</tr>
+<tr>
+<td><strong>Imaging</strong></td>
+<td>—</td>
+<td>Laser-ablation element map (LA files only)</td>
+</tr>
+</tbody>
+</table>
+<p>The Graphing and Imaging buttons are greyed out automatically when the loaded file does not contain the corresponding data type.</p>
+<hr />
+<h2 id="keyboard-shortcuts">Keyboard Shortcuts</h2>
+<table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ctrl+O</strong></td>
+<td>Open file</td>
+</tr>
+<tr>
+<td><strong>Ctrl+W</strong></td>
+<td>Close file</td>
+</tr>
+<tr>
+<td><strong>F1</strong></td>
+<td>Open online documentation in system browser</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="preferences">Preferences</h2>
+<p>Open <strong>Settings → Preferences</strong> to configure application-wide options.</p>
+<p><img alt="Preferences dialog showing the Application theme selector" src="screenshots/preferences.png" /></p>
+<h3 id="application-theme">Application theme</h3>
+<p>Choose between three colour themes that apply to all menus, dialogs, toolbars, and window chrome:</p>
+<table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>System default</strong></td>
+<td>Follows the OS appearance (light or dark)</td>
+</tr>
+<tr>
+<td><strong>Light (Fusion)</strong></td>
+<td>Light Fusion style, independent of the OS setting</td>
+</tr>
+<tr>
+<td><strong>Dark (Fusion)</strong></td>
+<td>Dark Fusion style, independent of the OS setting</td>
+</tr>
+</tbody>
+</table>
+<p>The theme is applied live as you move through the combo — clicking <strong>Cancel</strong> reverts the preview. The choice is saved for future sessions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Per-plot styles (background colour, grid lines, colour maps) are configured separately in each tool's <strong>Plot Options (⚙)</strong> menu and are independent of the application theme.</p>
+</div>
+<hr />
+<h2 id="tooltips">Tooltips</h2>
+<p>All interactive controls — toolbar buttons, channel selectors, plot-type dropdowns, export buttons, search boxes, and the preferences theme selector — have descriptive tooltips. Hover over any control for a moment to see what it does.</p>
+<hr />
+<h2 id="tools">Tools</h2>
+<h3 id="file-info">File Info</h3>
+<p>The <strong>File Info</strong> tool shows a parsed, grouped metadata tree populated from the loaded HDF5 file. Parameters are organised into named sections (e.g. <em>General</em>, <em>Image</em>, <em>Laser</em>, <em>Configuration</em>) with long descriptive names, smart value formatting (units appended, floats trimmed), and per-parameter tooltips where available.</p>
+<p>The file path is always shown as the first row. Groups most relevant to the detected file type are expanded automatically on load; your manual expand/collapse choices are saved and restored on the next file open.</p>
+<p><img alt="File Info tool with grouped metadata and search box" src="screenshots/file-info.png" /></p>
+<h4 id="searching">Searching</h4>
+<p>A search box above the tree filters parameters in real time. Groups are auto-expanded when they contain matches; clearing the search restores the previous expansion state.</p>
+<h4 id="context-menu">Context Menu</h4>
+<p>Right-clicking any item opens a context-sensitive menu:</p>
+<table>
+<thead>
+<tr>
+<th>Click target</th>
+<th>Available actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File path row</td>
+<td><strong>Copy file path</strong></td>
+</tr>
+<tr>
+<td>Group header</td>
+<td><strong>Copy group values</strong> (all parameters as tab-separated text), <strong>Export group…</strong>, <strong>Export all metadata…</strong></td>
+</tr>
+<tr>
+<td>Leaf parameter</td>
+<td><strong>Copy value</strong>, <strong>Copy parameter name</strong>, <strong>Export group…</strong>, <strong>Export all metadata…</strong></td>
+</tr>
+<tr>
+<td>Background</td>
+<td><strong>Export all metadata…</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="metadata-export">Metadata Export</h4>
+<p>"Export group…" and "Export all metadata…" open a Save dialog with five format options:</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CSV</strong></td>
+<td><code># File: &lt;filename&gt;</code> comment on line 1. Columns: Group, Parameter, Value. A group-label row introduces each section.</td>
+</tr>
+<tr>
+<td><strong>JSON</strong></td>
+<td><code>{"file": "&lt;filename&gt;", "groups": {"GroupName": [{"parameter": …, "value": …}, …], …}}</code></td>
+</tr>
+<tr>
+<td><strong>HTML</strong></td>
+<td>Self-contained styled page. Filename as <code>&lt;h1&gt;</code>; each group as an <code>&lt;h2&gt;</code> heading followed by a two-column table.</td>
+</tr>
+<tr>
+<td><strong>PDF</strong></td>
+<td>Matplotlib-rendered table. Bold filename title; light-blue group header rows; alternating white/light-grey data rows. Height calculated from row count.</td>
+</tr>
+<tr>
+<td><strong>PNG</strong></td>
+<td>Same as PDF, saved as a raster image at 150 dpi.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="hdf5-structure-browser">HDF5 Structure Browser</h3>
+<p>The <strong>HDF5 Info</strong> tool shows the raw internal HDF5 file hierarchy. Every group, dataset (shape, data type, and size), and attribute is listed exactly as stored in the file — useful for low-level inspection or for locating dataset paths before writing custom analysis scripts.</p>
+<p><img alt="HDF5 Structure Browser with file hierarchy expanded" src="screenshots/hdf5-structure.png" /></p>
+<h4 id="searching_1">Searching</h4>
+<p>A search box above the tree recursively filters groups, datasets, and attributes by name or info text. Matching items and all their ancestors are shown and auto-expanded; clearing the search collapses the tree back to the top-level root.</p>
+<hr />
+<h3 id="graphing-tool">Graphing Tool</h3>
+<p>The <strong>Graphing Tool</strong> provides three stacked, resizable panels: <em>Sum Mass Spectrum</em> (top), <em>Time Traces</em> (middle), and <em>Data Plots</em> (bottom). Each panel can be collapsed or expanded independently with its header toggle button. The main <strong>Plot Options</strong> toolbar button opens a dialog with global plot style settings.</p>
+<p><img alt="Graphing Tool with spectrum, time traces, and data plot panels" src="screenshots/graphing-overview.png" /></p>
+<h4 id="sum-mass-spectrum">Sum Mass Spectrum</h4>
+<p>The spectrum panel shows intensity vs. mass-to-charge ratio. Use the <strong>Type</strong> dropdown to switch between:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sum Mass Spectrum</strong></td>
+<td>Full acquisition sum spectrum (default)</td>
+</tr>
+<tr>
+<td><strong>Cursor TOF Spectrum</strong></td>
+<td>Raw time-of-flight spectrum at the current cursor position</td>
+</tr>
+<tr>
+<td><strong>Cursor Stick Spectrum</strong></td>
+<td>Peak intensities as sticks at the current cursor buf/write position</td>
+</tr>
+<tr>
+<td><strong>Average TOF Spectrum</strong></td>
+<td>Time-averaged TOF spectrum within the selected time range</td>
+</tr>
+<tr>
+<td><strong>Average Stick Spectrum</strong></td>
+<td>Time-averaged stick spectrum within the selected time range</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>buf index</strong> and <strong>write index</strong> spinboxes in the Time Cursor panel select which acquisition segment is used for the cursor spectrum types.</p>
+<h4 id="time-traces">Time Traces</h4>
+<p>Select one or more channels from the channel selector to plot their intensity over time.</p>
+<ul>
+<li>Isotope peaks and time-resolved metadata channels (from registered data sources such as gas flows, pressures, and temperatures) are available.</li>
+<li>The x-axis shows formatted date/time from POSIX timestamps.</li>
+<li>The y-axis adapts to the channel units; a secondary y-axis appears automatically when channels with different units are selected.</li>
+<li><strong>Display mode</strong>: choose <em>Overlaid</em> (all traces on one axis), <em>Split by Unit</em> (one subplot per unit group), or <em>Split All</em> (one subplot per channel) from the <strong>Mode</strong> dropdown.</li>
+<li><strong>Navigation</strong>: double-click the plot to reset both axes, or use the on-canvas <strong>Reset X (↔)</strong> / <strong>Reset Y (↕)</strong> buttons to autoscale each axis independently.</li>
+</ul>
+<p><img alt="Time Traces panel with multiple channels and time cursor active" src="screenshots/graphing-timetraces.png" /></p>
+<h5 id="time-cursor">Time Cursor</h5>
+<p>Enable the <strong>Time Cursor</strong> toggle to activate an interactive vertical cursor on the time trace plot. The cursor info panel on the right shows the current time, buf/write indices, and instantaneous values for all selected channels.</p>
+<p>Enable <strong>Time Range</strong> (requires Time Cursor) to place a second cursor and select a time interval. The interval endpoints are used for <strong>Average Spectrum</strong> types and for data export.</p>
+<h4 id="data-plots">Data Plots</h4>
+<p>A third panel provides multi-channel analytical plots. Select a plot type from the <strong>Type</strong> dropdown, choose channels in the <strong>Y</strong> selector, and press <strong>Update Plot</strong> (or enable <strong>Auto-update</strong>). The <strong>⚙</strong> button opens per-type options.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scatter</strong></td>
+<td>X vs Y scatter for any combination of channels. Supports log/lin on both axes.</td>
+</tr>
+<tr>
+<td><strong>Heatmap</strong></td>
+<td>Channels × time as a colour-mapped grid. Each channel is normalised independently to [0, 1]. Colour scale clips at the 1st/99th percentile by default (configurable).</td>
+</tr>
+<tr>
+<td><strong>Correlation</strong></td>
+<td>N×N pairplot matrix showing Pearson or Spearman r between all selected channels. Diagonal, lower, and upper zones can each show colour swatches, density histograms, or scatter plots.</td>
+</tr>
+<tr>
+<td><strong>Histogram</strong></td>
+<td>Selected channels as overlapping semi-transparent distributions. Switch between bar histograms and kernel-density (KDE) curves. Log-spaced bins are used automatically in log-X mode.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Data Plots panel showing a Correlation pairplot" src="screenshots/graphing-correlation.png" /></p>
+<h4 id="exporting">Exporting</h4>
+<p>Each panel (Spectrum, Time Traces, Data Plots) has <strong>Copy</strong> and <strong>Export</strong> buttons. Export saves data as CSV or JSON.</p>
+<p>For Time Traces and Data Plots (when time is the x-axis), the <strong>Time Column</strong> option lets you choose:</p>
+<ul>
+<li><strong>Relative time</strong> (<code>time_relative_s</code>): seconds elapsed from the first sample — recommended for most analysis.</li>
+<li><strong>POSIX timestamp</strong> (<code>time_posix_s</code>): absolute float64 seconds since the Unix epoch, written as 9-decimal fixed-point in CSV to preserve full sub-microsecond precision.</li>
+</ul>
+<hr />
+<h3 id="imaging-tool">Imaging Tool</h3>
+<p>The <strong>Imaging Tool</strong> visualises Laser Ablation (LA) element maps. It is only available when the loaded file contains LA image data.</p>
+<p><img alt="Imaging Tool showing a laser-ablation element map" src="screenshots/imaging-map.png" /></p>
+<h4 id="channel-selection">Channel Selection</h4>
+<p>The <strong>Peak</strong> selector in the toolbar lists all available channels:</p>
+<ul>
+<li><strong>Isotope peaks</strong> — intensity of a measured mass channel at each spot.</li>
+<li><strong>Metadata channels</strong> — time-resolved instrument parameters (e.g. gas flow, pressure, temperature) joined to each spot via the acquisition index. This lets you visualise, for example, carrier gas flow as a spatial map over the ablation area.</li>
+<li><strong>Derived channels</strong> — ratio images and RGB false-colour composites (see below).</li>
+</ul>
+<p>Select <strong>"(Show locations only)"</strong> to display spot positions without any intensity data.</p>
+<h4 id="navigation">Navigation</h4>
+<ul>
+<li><strong>Pan and zoom</strong>: left-click drag to pan; scroll wheel to zoom; draw a rectangle to zoom to a region.</li>
+<li><strong>Reset view</strong>: double-click the image or use the toolbar <strong>Reset</strong> button.</li>
+<li><strong>Scale mode</strong>: toggle between <strong>Fit</strong> (image fills the available area) and <strong>1:1</strong> (true pixel scale).</li>
+</ul>
+<h4 id="contrast-control">Contrast Control</h4>
+<p>Open <strong>Plot Options</strong> to adjust:</p>
+<ul>
+<li><strong>vmin / vmax</strong>: set manually or use Auto (1st/99th percentile of the current channel). The auto-computed values are displayed in the fields and become editable when Auto is unchecked.</li>
+<li><strong>Color Scale</strong>: switch between linear and logarithmic intensity scaling.</li>
+<li><strong>Clip Mode</strong>: <em>Clamp</em> maps out-of-range values to the nearest end of the colour scale; <em>Transparent</em> makes them invisible.</li>
+</ul>
+<h4 id="colour-map">Colour Map</h4>
+<p>Choose a colour map from the <strong>Colormap</strong> toolbar selector. The choice is applied immediately without re-rendering the geometry.</p>
+<h4 id="derived-channels">Derived Channels</h4>
+<p>Use the <strong>+ Ratio</strong> and <strong>+ RGB</strong> toolbar buttons to create synthetic channels:</p>
+<ul>
+<li><strong>Ratio image</strong>: divides one channel by another (A ÷ B) and maps the result to the colour scale.</li>
+<li><strong>RGB false-colour composite</strong>: assigns up to three channels to the R, G, and B primaries. Each channel has an independent vmin/vmax. The result is a colour-blended image with no colour bar.</li>
+</ul>
+<p><img alt="Imaging Tool showing an RGB false-colour composite" src="screenshots/imaging-rgb.png" /></p>
+<p>Use the <strong>Edit</strong> button (enabled when a derived channel is selected in the Peak dropdown) to modify an existing definition.</p>
+<h4 id="export">Export</h4>
+<p><strong>Export Image</strong> saves the current plot as PNG, SVG, PDF, or TIFF. Options include size (plot area in mm or inches), DPI, scope (current view or full map), and metadata embedding (filename and software version). The dialog shows the true export size including axes, colour bar, and title.</p>
+<p><strong>Export Data</strong> (under the Export dropdown) saves numerical data as CSV or JSON:</p>
+<ul>
+<li><strong>Point data</strong> mode: one row per measurement spot with X/Y coordinates and all selected channels. Suitable for importing into other analysis tools.</li>
+<li><strong>Grid matrix</strong> mode: interpolates selected channels onto a regular rectangular raster at a user-specified cell size (µm/cell). Uses <code>scipy.spatial.cKDTree</code> nearest-neighbour lookup for performance on large datasets. Multi-channel CSV exports produce one file per channel.</li>
+</ul>
+<p>Both modes support configurable separator, decimal mark, and float precision.</p>
+<p><strong>Copy</strong> copies the current view to the clipboard.</p>
+<h4 id="cursor-info">Cursor Info</h4>
+<p>Moving the mouse over the image shows the X/Y coordinates (in µm) and the data value at that position in the status bar.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

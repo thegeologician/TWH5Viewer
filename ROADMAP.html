@@ -1,0 +1,1260 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for TWH5Viewer, a PySide6-based HDF5 Viewer for icpTOF data.">
+      
+      
+      
+        <link rel="canonical" href="https://thegeologician.github.io/TWH5Viewer/ROADMAP.html">
+      
+      
+        <link rel="prev" href="usage.html">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Roadmap - TWH5Viewer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#roadmap" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="TWH5Viewer Documentation" class="md-header__button md-logo" aria-label="TWH5Viewer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TWH5Viewer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Roadmap
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thegeologician/TWH5Viewer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    thegeologician/TWH5Viewer
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="TWH5Viewer Documentation" class="md-nav__button md-logo" aria-label="TWH5Viewer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TWH5Viewer Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thegeologician/TWH5Viewer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    thegeologician/TWH5Viewer
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="usage.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ROADMAP.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#v05x-released-057" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v0.5.x (Released — 0.5.7)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v0.5.x (Released — 0.5.7)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graphing-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graphing Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imaging-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imaging Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-structure-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Structure &amp; Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icptofpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        icpTOFpy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File info
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v060-current-version-060-ux-and-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v0.6.0 (Current version — 0.6.0) (UX and Documentation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v0.6.0 (Current version — 0.6.0) (UX and Documentation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentation-and-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation and UX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphing-tool_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graphing Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imaging-tool_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imaging Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-structure-export_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Structure &amp; Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icptofpy_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        icpTOFpy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v070-enhanced-data-querying-and-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v0.7.0 (Enhanced data querying and analysis)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v0.7.0 (Enhanced data querying and analysis)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graphing-tool_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graphing Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analysis Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v100-architecture-qol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.0.0 (Architecture &amp; QoL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.0.0 (Architecture &amp; QoL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icptofpy_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        icpTOFpy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v110-data-analysis-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.1.0 (Data analysis features)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.1.0 (Data analysis features)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app-structure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-capabilities-long-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Capabilities (Long Term)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuous-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous Tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completed-features-historical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completed Features (Historical)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#v05x-released-057" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v0.5.x (Released — 0.5.7)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v0.5.x (Released — 0.5.7)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graphing-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graphing Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imaging-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imaging Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-structure-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Structure &amp; Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icptofpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        icpTOFpy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File info
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v060-current-version-060-ux-and-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v0.6.0 (Current version — 0.6.0) (UX and Documentation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v0.6.0 (Current version — 0.6.0) (UX and Documentation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentation-and-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation and UX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphing-tool_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graphing Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imaging-tool_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imaging Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-structure-export_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Structure &amp; Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icptofpy_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        icpTOFpy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v070-enhanced-data-querying-and-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v0.7.0 (Enhanced data querying and analysis)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v0.7.0 (Enhanced data querying and analysis)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graphing-tool_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graphing Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analysis Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v100-architecture-qol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.0.0 (Architecture &amp; QoL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.0.0 (Architecture &amp; QoL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icptofpy_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        icpTOFpy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v110-data-analysis-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.1.0 (Data analysis features)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.1.0 (Data analysis features)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app-structure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-capabilities-long-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Capabilities (Long Term)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuous-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous Tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completed-features-historical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completed Features (Historical)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="roadmap">Roadmap</h1>
+<p>This document tracks planned features and enhancements for TWH5Viewer.
+Known bugs and issues are tracked in <a href="BUGS.md">BUGS.md</a>.</p>
+<blockquote>
+<p>Priority ordering is determined by a combination of <strong>user impact</strong> and <strong>implementation effort</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="v05x-released-057">v0.5.x (Released — 0.5.7)</h2>
+<p><em>Focus: Visualization enhancements, channel filtering, layout flexibility, export completion, and core application stability.</em></p>
+<h3 id="graphing-tool">Graphing Tool</h3>
+<ul>
+<li>[x] <strong>Histogram plot binning options</strong>: Options to either keep current, use same bin width for all channels, or calculate bin edges from min/max of all channels.</li>
+<li>[x] <strong>Histogram plot split</strong>: Option to split into individual histograms for each channel, or plot them all in one plot.</li>
+<li>[x] <strong>Lin/Log toggles</strong>: Make Lin/Log toggles available for all scatter- and histogram-plots in the Coplot all at once.</li>
+<li>[x] <strong>Logarithmic &amp; specific color scaling</strong>: Logarithmic and other (ECDF, etc.) color-scaling options for heatmaps. <em>(v0.5.5)</em></li>
+<li>[x] <strong>Improved channel selectors — imaging tool</strong>: Port <code>ChannelSelectorWidget</code> to the imaging tool's single-select channel dropdown (search box + group pre-filters, single-select mode). <em>(v0.5.5)</em></li>
+</ul>
+<h3 id="imaging-tool">Imaging Tool</h3>
+<ul>
+<li>[x] <strong>Metadata channels as spatial maps</strong>: Metadata channels (e.g. gas flow, pressure, temperature logged per buf/write) can now be selected in the imaging tool channel picker and rendered as spatial colour maps. Values are joined to spot rows via <code>WriteIndex × nbr_bufs + BufIndex</code>. <em>(v0.5.6)</em></li>
+<li>[x] <strong>Correct Y-axis orientation</strong>: Image Y-axis is now inverted so the first scan line appears at the top. <em>(v0.5.6)</em></li>
+</ul>
+<h3 id="app-structure-export">App Structure &amp; Export</h3>
+<ul>
+<li>[x] <strong>Image export completeness</strong>: Ensure <code>image_export.py</code> supports every option exposed in the Export dialog.</li>
+</ul>
+<h3 id="icptofpy">icpTOFpy</h3>
+<ul>
+<li>[x] <strong>Better TPS2 parameter names</strong>: Translate names of TPS2 parameters to be more user-friendly. Requires lookup table.</li>
+<li>[x] <strong>Implement is_Quantistar()</strong>: New metadata function and integration into the metadata loading system.</li>
+</ul>
+<h3 id="file-info">File info</h3>
+<ul>
+<li>[x] <strong>Copy values</strong>: Add "Copy value" and "Copy path" options to context menu. Copy whole branch/group when called on a group header. <em>(v0.5.2)</em></li>
+<li>[x] <strong>File path</strong>: Add "Copy file path" option to context menu. Either make file path available in the metadata tree or add it to the file info dialog or show the file name and the "copy path" option globally. <em>(v0.5.2)</em></li>
+<li>[x] <strong>Export metadata</strong>: Add "Export metadata" option to context menu. Export selected group or currently expanded groups or the whole metadata to a CSV file, JSON file, or a nicely formatted table as html, pdf, or png. <em>(v0.5.2)</em></li>
+</ul>
+<hr />
+<h2 id="v060-current-version-060-ux-and-documentation">v0.6.0 (Current version — 0.6.0) (UX and Documentation)</h2>
+<p><em>Focus: Improve UX, documentation, and export completeness.</em></p>
+<h3 id="documentation-and-ux">Documentation and UX</h3>
+<ul>
+<li>[x] <strong>Online Docs</strong>: Expand Usage information with more explanations of all the different options and screenshots.</li>
+<li>[x] <strong>Better Tooltips</strong>: Descriptive tooltips added to all interactive controls (toolbar actions, channel selectors, plot-type combos, copy/export/reset buttons, search boxes, preferences theme selector).</li>
+<li>[x] <strong>Help option</strong>: "Documentation" entry in the About menu (F1 shortcut) opens the online docs in the system browser.</li>
+<li>[x] <strong>Better "About" dialog</strong>: Rich About dialog with TOFWERK logo, version number, description, and quick-links to docs and GitHub.</li>
+<li>[x] <strong>App icon</strong>: ICO bundled and embedded in the exe via <code>--windows-icon-from-ico</code>; shown in File Explorer and title bar. <em>(Taskbar icon and splash screen do not work in Nuitka onefile mode due to bootstrapper/subprocess architecture — shelved.)</em></li>
+<li>[x] <strong>App-wide theme</strong>: System default / dark / light theme for the whole Qt application (menus, dialogs, and plot backgrounds), independent of the per-plot style set in Plot Options.</li>
+<li>[x] <strong>Basic keyboard shortcuts</strong>: Ctrl+O (Open file), Ctrl+W (Close file), F1 (Documentation).</li>
+<li>[x] <strong>Search/Filter</strong>: Search box for Metadata and HDF5 Structure trees.</li>
+<li>[x] <strong>User Preferences</strong>: Save/restore "Expanded Groups" tree state between sessions.</li>
+</ul>
+<h3 id="graphing-tool_1">Graphing Tool</h3>
+<ul>
+<li>[x] <strong>Automatic labels</strong>: String metadata (scan/sample names) plotted along the time axis.</li>
+<li>[ ] <strong>Time range quick stats</strong>: When a time range is selected in time trace view, show quick stats (min, max, mean, std, median, count) for each selected channel in the info box.</li>
+<li>[ ] <strong>Performance improvements</strong>: Implement decimation for the heatmap, similar to the approach for the time traces outlined in <code>plot_performance_optimizations.md</code>. Is something similar possible for the other plots, is it sensible? For scatter plot or histogram plot, maybe sub-sample to manageable amount of randomly sampled data points.</li>
+<li>[x] <strong>Bulk-selection of channels</strong>: Shift-click any second checkbox to toggle all visible items between the two clicks to the same state as the clicked item.</li>
+</ul>
+<h3 id="imaging-tool_1">Imaging Tool</h3>
+<ul>
+<li>[ ] <strong>Interpolated output extent</strong>: Clip numerical output and interpolated image export to the extent of the actual spot locations + 1/2 spot size.</li>
+<li>[ ] <strong>Interpolated image export</strong>: Export an interpolated image where pixel values are interpolated between raw data points. Include interpolation method (bilinear, bicubic) and resolution options.</li>
+<li>[ ] <strong>Multi-channel images</strong>: Export a selection of channels as a multi-channel image to TIFF, layers to SVG/PDF, or GIF.</li>
+<li>[ ] <strong>Export layers</strong>: SVG/PDF/TIFF export with image and decorations in separate layers.</li>
+<li>[ ] <strong>Contrast histogram</strong>: Display pixel values as an interactive histogram with draggable vmin/vmax handles.</li>
+<li>[ ] <strong>Colour scale for false-colour images</strong>: Show RGB colour scale as three separate bars or a mixing-triangle.</li>
+<li>[ ] <strong>Editing RGB channels</strong>: Buttons to rotate (RGB→GBR) or swap (RGB→RBG) channel assignment.</li>
+<li>[ ] <strong>Colorblind-safe colormaps</strong>: viridis, cividis, batlow, greyscale.</li>
+</ul>
+<h3 id="app-structure-export_1">App Structure &amp; Export</h3>
+<ul>
+<li>[ ] <strong>Standalone image export CLI</strong>: Finalize the <code>image_export.py</code> <code>__main__</code> CLI block so it works end-to-end as a standalone command-line tool.</li>
+<li>[ ] <strong>Document stand-alone image export CLI</strong>: Add documentation for the stand-alone image export CLI in Readme, and in the help menu on the website.</li>
+<li>[ ] <strong>Check if image export could be built into a stand-alone executable</strong>: Check what additional data loading and processing logic would be required to make the image export functionality available as a stand-alone executable. Check library dependencies and executable build size.</li>
+</ul>
+<h3 id="icptofpy_1">icpTOFpy</h3>
+<ul>
+<li>[ ] <strong>Performance improvements</strong>: Implement performance improvements for <code>icpTOFpy</code>.</li>
+<li>[ ] <strong>Instrument lookup</strong>: Implement a function to translate ADQ serial number to instrument serial number. Needs lookup table, that should NOT be included in general distribution. If lookup table is given, return instrument serial no, if not given/present, return nothing, gracefully.</li>
+<li>[ ] <strong>DAQ hardware</strong>: Add support for different DAQ hardware (ADQ1600, ADQ14, ...) — include into metadata system.</li>
+<li>[ ] <strong>Better error messages</strong>: Improve error messages to be more user-friendly. Review all error messages and add more context and helpful information. Review default logging levels and messages.</li>
+</ul>
+<h3 id="file-tool">File Tool</h3>
+<ul>
+<li>[ ] <strong>Better overview</strong>: Show status of the various "is_...()" functions more graphically, only show instruments that apply to the current file. Maybe include instrument logos for different instruments types, and a table of tick marks / crosses for the "is_..." functions. - Needs to also work in metadata exports (CSV, HTML, PDF, PNG).</li>
+</ul>
+<hr />
+<h2 id="v070-enhanced-data-querying-and-analysis">v0.7.0 (Enhanced data querying and analysis)</h2>
+<p><em>Focus: derived channels, statistics, ROIs, and cross-tool parameter exchange.</em></p>
+<h3 id="graphing-tool_2">Graphing Tool</h3>
+<ul>
+<li>[ ] <strong>Derived channels</strong>: Formula-based derived channels (arithmetic expressions between any combination of channels) usable as time traces, scatter/histogram axes, and spatial maps. Replaces and extends current hard-coded ratio channels; definitions are freely exchangeable between Graphing and Imaging Tools.</li>
+<li>[ ] <strong>Statistics Data Plot</strong>: New Data Plot type — "Statistics" to show currently selected channels as a labelled box plot.</li>
+<li>[ ] <strong>Regression lines</strong>: Option to put a regression line, optionally with correlation coefficient and R-squared value, on scatter plots.</li>
+<li>[ ] <strong>Editable element groups</strong>: Make the element groups in the channel selector widget user-editable. Eiter in the Settings, or at least in a configuration file.</li>
+</ul>
+<h3 id="analysis-features">Analysis Features</h3>
+<ul>
+<li>[ ] <strong>Laser metadata</strong>: Make scan names, sample types, and laser spot types available as time-resolved data and spatial data. <em>(Prerequisite for ROI by scan/sample.)</em></li>
+<li>[ ] <strong>ROI Tool</strong>: Draw Rectangle/Circle/Polygon ROIs; extract statistics and spectra. Multi-ROI comparison.</li>
+<li>[ ] <strong>Histogram ROI</strong>: Pixel intensity histogram for the active peak (ROI "full map" option).</li>
+<li>[ ] <strong>ROI by scan/sample</strong>: Auto-generate ROIs from laser metadata (one ROI per scan/sample). <em>Requires Laser metadata.</em></li>
+</ul>
+<hr />
+<h2 id="v100-architecture-qol">v1.0.0 (Architecture &amp; QoL)</h2>
+<p><em>Focus: Overall optimizations, usability polish, and robust state management.</em></p>
+<h3 id="app-structure">App Structure</h3>
+<ul>
+<li>[ ] <strong>Settings Dialog</strong>: UI for application-wide defaults (colormap, spot shape, theme, etc.) and default presets for all the individual options dialogs.</li>
+<li>[ ] <strong>Recent Files</strong>: "Open Recent" menu item.</li>
+<li>[ ] <strong>Active Channel Filter</strong>: Global "Active Channels" filter visible in all tools/exports (option to hide or not load them).</li>
+<li>[ ] <strong>Undo/redo system</strong>: Command pattern for all state-mutating operations.</li>
+</ul>
+<h3 id="icptofpy_2">icpTOFpy</h3>
+<ul>
+<li>[ ] <strong>Extract upstream data logic</strong>: Migrate pixel filtering, column extraction, and ratio computation from <code>TWH5Viewer</code> into <code>icpTOFpy</code>.</li>
+</ul>
+<hr />
+<h2 id="v110-data-analysis-features">v1.1.0 (Data analysis features)</h2>
+<p><em>Focus: Data analysis features and application enhancements.</em></p>
+<h3 id="app-structure_1">App Structure</h3>
+<ul>
+<li>[ ] <strong>Save / Load Workspace</strong>: Save open file, selections, ROIs, derived channels to a file and restore.</li>
+<li>[ ] <strong>Save derived channel definitions</strong>: Persist ratio/RGB/formula definitions to disk.</li>
+<li>[ ] <strong>Status indicators</strong>: "Unsaved changes" / "read-only" indicators in status bar.</li>
+<li>[ ] <strong>Plugin System</strong>: Run custom Python scripts on loaded data.</li>
+</ul>
+<h3 id="advanced-capabilities-long-term">Advanced Capabilities (Long Term)</h3>
+<ul>
+<li>[ ] <strong>Peak integration</strong>: Show time trace for interactively defined integration window; calculate area.</li>
+<li>[ ] <strong>Multi-file overlay</strong>: Compare spectra or time traces from multiple open files.</li>
+<li>[ ] <strong>Mass calibration viewer</strong>: Visualize/edit calibration curves; plot peak position over time.</li>
+<li>[ ] <strong>Image annotations</strong>: Text, arrows, shapes as toggleable overlays.</li>
+<li>[ ] <strong>Overlay images</strong>: Overlay multiple channels or false-colour images as a new composite view.</li>
+<li>[ ] <strong>Segmented Image data</strong>: Handle Image data with an additional dimension, usually in Segments.</li>
+<li>[ ] <strong>FIB Images</strong>: Handle fibTOF images properly.</li>
+<li>[ ] <strong>2.5D and 3D visualization</strong>: Slider to scroll through coordinates (2.5D) or 3D voxel plot.</li>
+</ul>
+<hr />
+<h2 id="continuous-tasks">Continuous Tasks</h2>
+<p><em>These items have no fixed target version and are worked on incrementally as opportunities arise.</em></p>
+<ul>
+<li><strong>More instruments and TPS parameters</strong> <em>(icpTOFpy)</em>: Extend the range of recognised instruments (Vocus range, EI?, Quantistar variants) and add more instrument-specific TPS parameters. Standardise the way the masterlists are generated from <code>tps1rc.cfg</code> files.</li>
+</ul>
+<hr />
+<h2 id="completed-features-historical">Completed Features (Historical)</h2>
+<details>
+<summary>Click to expand and view released features (up to v0.5.x)</summary>
+
+### Core & Integration
+- [x] **Root cleanup**: Deleted stale debug/analysis scripts.
+- [x] **Tighten imports**: Slimmed PySide6 imports to reduce executable size.
+- [x] **Nuitka build script**: Added necessary include-package options and compression for smaller builds.
+- [x] **Performance improvements**: Enhanced data loading, plot updates, and image display times using scipy spatial trees over brute-force methods. Threaded Pandas processing.
+- [x] **Bundle pyrec from source**: Integrated pyrec directly into icpTOFpy to eliminate the separate installation step.
+- [x] **Testing**: Added tests/test_image_export.py.
+- [x] **HDF5 dimension reference**: Documented TOFWERK HDF5 dimensions, ordering, and units in icpTOFpy.
+
+### Graphing Tool Features
+- [x] **Correlation plot — optional coefficient labels on colour swatches**: New "Show correlation coefficient labels" checkbox in the ⚙ options dialog. *(v0.5.2)*
+- [x] **Correlation plot — tick labels and global Lin/Log toggles**: Tick labels suppressed when lower triangle is colour swatches; shown on outer edges for scatter. A single stacked Lin Y / Lin X pair controls all histogram/scatter sub-axes at once. *(v0.5.2)*
+- [x] **Channel selector — toggle-state group filters and data source buttons**: Geochemical group buttons are stateful toggles (multi-group union). [Major] narrows to most-abundant isotope per element. Registered data source prefixes (ICAP, TPS2, ODG, …) appear as toggle buttons; [Monitor] filters to monitoring channels. Tooltip strings centralised in `_BUTTON_TOOLTIPS`. *(v0.5.2)*
+- [x] **Time Traces — Overlaid mode 3+ unit groups**: Channels with more than two distinct unit groups no longer silently dropped; all plotted on single axis with concatenated label. *(v0.5.2)*
+- [x] **Time Traces — Correct Y-axis label for metadata**: Metadata channels with no parseable unit no longer incorrectly labelled "Intensity (counts)". *(v0.5.2)*
+- [x] **Heatmap**: Channels × time rendered as a `pcolormesh` heatmap with per-channel normalization and clipping. *(v0.5.0)*
+- [x] **Correlation plot**: N×N pairplot-style correlation matrix with pearson/spearman methods. *(v0.5.0)*
+- [x] **Histogram / Density distributions**: Overlapping semi-transparent histograms/KDE with lin/log toggles. *(v0.5.0)*
+- [x] **Independent Y-axis scaling**: Separate y-axis scale per parameter unit group.
+- [x] **Split trace plots**: Stacked subplots in time trace view. Auto-split by unit. *(v0.4.6)*
+- [x] **Zoom range buttons**: Overlay buttons to reset x- or y-axis bounds independently.
+- [x] **Time as a parameter**: Parameter vs. time plotting in Data plotting panel.
+- [x] **Read specific mass spectrum**: Read & display spectrum for a cursor's index via `TwGetTofSpectrumFromH5()`.
+- [x] **Stick spectrum**: Render all peak intensities as sticks at the cursor's write/buf position.
+- [x] **Time-average spectrum**: Averaged stick and mass spectra bounded by dual time cursors.
+- [x] **Export plots & Data**: Save plots (PNG, SVG, PDF) and numerical output (CSV, JSON).
+
+### Imaging & Metadata Features
+- [x] **Scale Bar**: Physical scale bar added to images.
+- [x] **Title customization**: Custom title text and internal/external placement for imaging plot.
+- [x] **Export numerical formats**: Export map arrays or channel lists to CSV/JSON.
+- [x] **mipTOF metadata**: Adapted metadata loading system for mipTOF parameter placement.
+- [x] **Display full Configuration File Content**: Made text box viewable under Metadata tab.
+
+### File Info
+- [x] **Context-menu copy actions**: Right-click any tree item to copy its value, parameter name, or file path; right-click a group header to copy all parameter/value pairs as tab-separated text. *(v0.5.2)*
+- [x] **Metadata export**: Export a single group or all metadata to CSV, JSON, HTML, PDF, or PNG. All formats include the filename as a title and group section headings. *(v0.5.2)*
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
