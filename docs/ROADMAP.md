@@ -50,10 +50,10 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 - [x] **User Preferences**: Save/restore "Expanded Groups" tree state between sessions.
 
 ### Graphing Tool
-- [ ] **Automatic labels**: String metadata (scan/sample names) plotted along the time axis.
+- [x] **Automatic labels**: String metadata (scan/sample names) plotted along the time axis.
 - [ ] **Time range quick stats**: When a time range is selected in time trace view, show quick stats (min, max, mean, std, median, count) for each selected channel in the info box.
 - [ ] **Performance improvements**: Implement decimation for the heatmap, similar to the approach for the time traces outlined in `plot_performance_optimizations.md`. Is something similar possible for the other plots, is it sensible? For scatter plot or histogram plot, maybe sub-sample to manageable amount of randomly sampled data points.
-- [ ] **Bulk-selection of channels**: Allow for bulk-selection of channels in the channel selector (select one, Shift-select the last, allow to toggle all in between).
+- [x] **Bulk-selection of channels**: Shift-click any second checkbox to toggle all visible items between the two clicks to the same state as the clicked item.
 
 ### Imaging Tool
 - [ ] **Interpolated output extent**: Clip numerical output and interpolated image export to the extent of the actual spot locations + 1/2 spot size.
@@ -88,6 +88,7 @@ Known bugs and issues are tracked in [BUGS.md](BUGS.md).
 - [ ] **Derived channels**: Formula-based derived channels (arithmetic expressions between any combination of channels) usable as time traces, scatter/histogram axes, and spatial maps. Replaces and extends current hard-coded ratio channels; definitions are freely exchangeable between Graphing and Imaging Tools.
 - [ ] **Statistics Data Plot**: New Data Plot type — "Statistics" to show currently selected channels as a labelled box plot.
 - [ ] **Regression lines**: Option to put a regression line, optionally with correlation coefficient and R-squared value, on scatter plots.
+- [ ] **Editable element groups**: Make the element groups in the channel selector widget user-editable. Eiter in the Settings, or at least in a configuration file.
 
 ### Analysis Features
 - [ ] **Laser metadata**: Make scan names, sample types, and laser spot types available as time-resolved data and spatial data. *(Prerequisite for ROI by scan/sample.)*

@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **Automatic labels on time trace plot**: Selecting a string-valued metadata column (e.g. scan
+  or sample names) now renders it as coloured time-span annotations overlaid on the time trace
+  plot rather than attempting to plot it as a numeric line. Each distinct value gets a distinct
+  colour; consecutive runs of identical values are shaded across all subpanels with the value
+  text centred in its span. Multiple label channels stack vertically. Selecting only string
+  channels shows a bare labelled time axis.
+- **Bulk-selection in channel selector (multi-select mode)**: Shift-clicking a checkbox now
+  toggles all visible items between the previously clicked item and the current one to the same
+  checked/unchecked state. Only visible items (after search/filter) are affected; hidden items
+  are skipped.
+
 ### Fixed
 - **Online docs — screenshots missing**: Sync workflow (`docs.yml`) now copies `docs/screenshots/`
   to the public repo and triggers on changes to that directory, so images render correctly
